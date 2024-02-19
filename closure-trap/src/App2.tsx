@@ -18,7 +18,6 @@ function useInterval(fn: Function, time: number) {
   const clean = useCallback(() => {
     cleanUpFnRef.current?.();
   }, []);
-
   useEffect(() => {
     const timer = setInterval(() => ref.current(), time);
 
