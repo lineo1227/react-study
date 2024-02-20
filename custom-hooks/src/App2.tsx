@@ -1,15 +1,16 @@
 import { useState } from "react";
-import { useMount, useUnmount } from "./hooks";
+import { useMount, useUnmount, useUnmountedRef } from "./hooks";
 
 import { Button, message } from "antd";
 
 const Child = () => {
+  const unmountedRef = useUnmountedRef(); // 创建一个不可变的ref，用于记录组件是否卸载
   useMount(() => {
-    message.info("首次渲染");
+    message.info("首次渲染" + unmountedRef.current);
   });
 
   useUnmount(() => {
-    message.info("组件已卸载");
+    message.info("组件已卸载" + unmountedRef.current);
   });
 
   return <div>大家好,我是小杜杜,一起玩转Hooks吧!</div>;
