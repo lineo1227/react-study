@@ -18,13 +18,26 @@
 }
 
 .empty,
-.day {
+.day,
+.week {
   width: calc(100% / 7);
   text-align: center;
   line-height: 30px;
 }
-
-.day:hover {
+.empty {
+  background-color: #eee;
+  color: #aaa;
+  opacity: 0.5;
+}
+.day:hover,
+.selected {
   background-color: #ccc;
   cursor: pointer;
+}
+button {
+  outline: none;
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border-color: #fbfbfb;
 }
