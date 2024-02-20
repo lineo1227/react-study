@@ -126,10 +126,10 @@ const Calendar = forwardRef(InternalCalendar);
 function App() {
   const calendarRef = useRef<CalendarRef>(null);
   useEffect(() => {
-    console.log(calendarRef.current?.getDate().toLocaleDateString());
-    setTimeout(() => {
-      calendarRef.current?.setDate(new Date("2022-3-22"));
-    }, 3000);
+    // console.log(calendarRef.current?.getDate().toLocaleDateString());
+    // setTimeout(() => {
+    //   calendarRef.current?.setDate(new Date("2022-3-22"));
+    // }, 3000);
   }, []);
   return (
     <div className="App">
@@ -143,7 +143,6 @@ function App() {
         onChange={(date) => {
           console.log(date.toLocaleDateString());
         }}
-        value={new Date("2022-2-22")}
       />
     </div>
   );
