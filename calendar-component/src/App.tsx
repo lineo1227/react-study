@@ -4,7 +4,23 @@ import Calendar from "./Calendar";
 function App() {
   return (
     <div className="App">
-      <Calendar value={dayjs()}></Calendar>
+      <Calendar
+        locale="zh-CN"
+        value={dayjs()}
+        className={"aaa"}
+        onChange={(date) => {
+          alert(date.format("YYYY-MM-DD"));
+        }}
+        // dateInnerContent={(value) => {
+        //   return (
+        //     <div>
+        //       <p style={{ background: "yellowgreen", height: "30px" }}>
+        //         {value.format("YYYY/MM/DD")}
+        //       </p>
+        //     </div>
+        //   );
+        // }}
+      ></Calendar>
     </div>
   );
 }
